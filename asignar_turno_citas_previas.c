@@ -16,5 +16,6 @@ void asignar_turno_previas(int consultorio, int turno, struct consultorio** cons
     }
     current->array_bidimensional[turno][1] = 1;
     consultorios = &current;
-    free(current);
+    // printf("Funciono    ");
+    // free(current);
 }

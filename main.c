@@ -21,7 +21,6 @@ struct NodeN {
     struct NodeN* next;
 };
 
-
 struct appointment {
     char patient_name[50];
     char appointment_date[11];
@@ -66,7 +65,7 @@ struct AppointmentNode {
 
 struct consultorio_emergencia{
     int num_consultorio;
-    int array_bidimensional[TAM_ARRAY][2];
+    int array_bidimensional[16][2];
     struct consultorio_emergencia* next;
     struct consultorio_emergencia* prev;
 };
