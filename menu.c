@@ -19,6 +19,7 @@
 #include "add_appointment.c"
 #include "verificar_fecha_valida.c"
 #include "buscar_paciente.c"
+#include "free_citas.c"
 
 
 
@@ -84,6 +85,8 @@ int menu(){
     }
     //asignation ends
 
+    //pruebas de inicio
+
     // Crear una lista de citas de ejemplo
     // struct AppointmentNode *head = createAppointmentList("citas.csv");
     // imprimir_consultorio(consultorios);
@@ -129,51 +132,57 @@ int menu(){
 
         int success = 0;
         while(option==1){
-            //clean the terminal and ask the user for the account nummber
-            // system("clear");
-
+            system("clear");
+            int valid_hour = 0;
+            int hour = 0;
+            int valid_date = 0;
             int account_number_option1 = 0;
+            int add_turno = hour - 6;
+            int consultorio_add = 0;
+            int disponible = 0;
+            char *str;
+            struct patient* acc = NULL;
+            char date[11];
             printf("Ingrese el numero de cuenta del paciente: \n");
             scanf("%d", &account_number_option1);
+            struct AppointmentNode *temporal = head;
 
-            //search the patient by account number
             int encontrado = 0;
             encontrado = search_patient_by_account_number(patients, account_number_option1);
 
             if (encontrado == 1) {
-                struct patient* acc = NULL;
+                
                 acc = find_patient_by_account_number(patients, account_number_option1);
-
-                //ask for the date
-                char date[11];
+                
                 printf("Ingrese la fecha de la cita: \n");
                 scanf("%s", date);
 
-                //verify if the date is valid
-                int valid_date = 0;
                 valid_date = es_fecha_valida(date);
 
+
                 if (valid_date == 1) {
-                    int hour = 0;
+
                     printf("Ingrese la hora de la cita: \n");
                     scanf("%d", &hour);
-
-                    //verify if the hour is valid
-                    int valid_hour = 0;
                     valid_hour = get_hour_slot(hour);
 
                     if (hour >= 7 && hour <= 22) {
-                        int add_turno = hour - 6;
-                        int consultorio_add = 3;
-                        struct AppointmentNode *temporal = head;
+                        
+                        // consultorio_add = ciclo_consultorio(consultorios, add_turno);
+                        co
+                        
 
-                        int disponible = 0;
+                        
                         disponible = verificar_disponibilidad_cita(temporal, consultorio_add, add_turno, date);
 
                         if (disponible == 1) {
-                            char *str;
-                            sprintf(str, "%d", hour);
+                            printf("Para confirmar la cita vuelva a poner la hora: \n");
+                            char cadena_hora[11];
+
+                            scanf("%s", cadena_hora);
+                            printf(" la hora es%s\n", str)
                             addAppointment(&head, account_number_option1, consultorio_add, acc->name, date, str, add_turno, "citas.csv");
+                            printf("El error esta antes de free\n");
                             free_patient_list(temporal);
                             option =-1;
                             break;
@@ -199,6 +208,38 @@ int menu(){
                 break;
             }
         }
+        while(option ==2){
+            printf("Ingrese el numero de cuenta del paciente: \n");
+            int account_number_option2 = 0;
+            scanf("%d", &account_number_option2);
+            int encontrado = 0;
+            encontrado = search_patient_by_account_number(patients, account_number_option2);
 
-}
+            if(encontrado == 1){
+                deleteAppointment(&head, account_number_option2, "citas.csv");
+                option = -1;
+            }
+            else{
+                printf("El paciente no existe\n");
+                break;
+            }}
+        
+        }
+
+        while(option == 3){
+            printf("Ingrese el numero de cuenta del paciente: \n");
+            int account_number_option3 = 0;
+            scanf("%d", &account_number_option3);
+            int encontrado = 0;
+            encontrado = search_patient_by_account_number(patients, account_number_option3);
+
+            if(encontrado == 1){
+                
+            }
+            else{
+                printf("El paciente no existe en el sistema.\n");
+                break;
+            }
+        }
+
 }

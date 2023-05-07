@@ -1,13 +1,10 @@
 int verificar_disponibilidad_cita(struct AppointmentNode *head, int consultorio, int turno, char *fecha){
-    printf("Funcion llamada\n");
     if(head == NULL) {
         printf("La lista de citas está vacía\n");
         return 1; // está disponible
     }
     while(head != NULL){
-        printf("%s\n", head->date);
-        printf("%d", head->consultory);
-        printf("%d", head->turno);
+
         if(strcmp(head->date, fecha) == 0 && head->consultory == consultorio && head->turno == turno){
             // printf("%s", head->date);
             // printf("%d", head->consultory);
