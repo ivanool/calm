@@ -1,0 +1,40 @@
+
+
+    //agregar_logica
+    // int fecha_option = 0;
+    // int ask_account = 0;
+    // printf("Ingrese el numero de cuenta del paciente: \n");
+    // scanf("%d", &ask_account);
+    
+    // struct patient* acc = NULL;
+    // // printf("\n\n%d\n\n", ask_account);
+    // int encontrado = 0;
+    // encontrado  = search_patient_by_account_number(patients, ask_account);
+    // printf("%d", encontrado);
+    // acc = find_patient_by_account_number(patients, ask_account);
+    
+    // printf("\n\nd\n\n", ask_account);
+    // printf("Por favor, ingrese la fecha de la cita empezando por el año, mes y al final el día\n ");
+    // printf("Si la fecha tiene un solo digito en mes o día, NO ponga 0 antes de el mes. \n Ejemplo: 2024-5-31\n");
+    // char fechas[11];
+    // scanf("%s", fechas);
+    // fecha_option = es_fecha_valida(fechas);
+    // int turno_option = 0;
+    
+    // if(fecha_option == 1){
+    //     printf("\n\n Ingrese la hora de la cita, tiene que ser en formato de 24 horas sin minutos\n ejemplo 22 ó 10\n: \n");
+    //     scanf("%d", &turno_option);
+    //     turno_option = get_hour_slot(turno_option);
+    //     if(turno_option == 0){
+    //         printf("La hora ingresada no es valida, por favor ingrese una hora entre 7 y 22\n");
+    //         scanf("%d", &turno_option);
+    //         turno_option = get_hour_slot(turno_option);
+    //     }
+    //     // printf("La hora ingresada es: %d\n", turno_option);
+    //     int assigned_consultory = ciclo_consultorio(consultorios, turno_option);
+    //     printf("El consultorio que se le asigno es el numero: %d\n", assigned_consultory);
+    //     addAppointment(head,acc->account_number,assigned_consultory, acc->name, fechas, turno_option+6,turno_option);
+    //     return 1; 
+    // }else{
+    //     return 0;
+    // }

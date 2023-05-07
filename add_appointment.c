@@ -25,6 +25,7 @@ void addAppointment(struct AppointmentNode **head_ref, int account_number, int c
         printf("Error al abrir el archivo %s\n", filename);
         return;
     }
-    fprintf(fp, "%d,%d,%s,%s,%s,%d,%d\n", account_number, consultory, name, date, time, turno, 0);
+    fprintf(fp, "%d,%d,%s,%s,%s,%d\n", account_number, consultory, name, date, time, turno);
+    printf("Agregado con exito\n");
     fclose(fp);
 }
