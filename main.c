@@ -11,6 +11,17 @@
 #define NUM_CONSULTORIOS 15
 #define TAM_ARRAY 16
 #define MAX_STRING_LENGTH 100
+struct Appointment {
+    char name[MAX_STRING_LENGTH];
+    char date[MAX_STRING_LENGTH];
+    char time[MAX_STRING_LENGTH];
+    int hour;
+    int account_number;
+    struct Appointment* next;
+};
+
+
+
 
 struct NodeN {
     char* nombre;
@@ -53,15 +64,6 @@ struct AppointmentNode {
     struct AppointmentNode *head;
     struct AppointmentNode *tail;
 };
-
-// struct Node {
-//     int num_consultorio;
-//     int citas_hoy;
-//     int disponible;
-//     int horarios[32][2]; // Array bidimensional para almacenar el estatus y el turno
-//     struct Node* next;
-//     struct Node* prev;
-// };
 
 struct consultorio_emergencia{
     int num_consultorio;
