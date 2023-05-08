@@ -26,6 +26,5 @@ void addAppointment(struct AppointmentNode **head_ref, int account_number, int c
         return;
     }
     fprintf(fp, "%d,%d,%s,%s,%s,%d\n", account_number, consultory, name, date, time, turno);
-    printf("Agregado con exito\n");
     fclose(fp);
 }
