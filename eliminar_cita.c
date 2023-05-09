@@ -18,7 +18,6 @@ void deleteAppointment(struct AppointmentNode **head_ref, int account_number, ch
     }
     free(temp);
 
-    // Eliminar la cita del archivo CSV
     FILE *fp, *temp_file;
     char buffer[MAX_LINE_LENGTH];
     fp = fopen(filename, "r");

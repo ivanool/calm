@@ -1,15 +1,3 @@
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <string.h>
-
-// #define MAX_STRING_LENGTH 100
-
-
-
-
-
-
-
 int cita_coola(char *nombre,char *fecha, char *hora, int turno, int consultorio) {
     struct Appointment* front = NULL;
     struct Appointment* rear = NULL;

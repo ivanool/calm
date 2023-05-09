@@ -1,11 +1,3 @@
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <time.h>
-// #include <string.h>
-
-// #include <stdio.h>
-// #include <time.h>
-// #include <string.h>
 
 int es_fecha_valida(char* fecha) {
     time_t tiempo_actual = time(NULL);
@@ -38,22 +30,5 @@ int es_fecha_valida(char* fecha) {
         return 0;
     }
 }
-
-
-
-// int main() {
-//     char fecha[11];
-//     printf("Ingresa una fecha en formato YYYY-MM-DD: ");
-//     scanf("%s", fecha);
-    
-//     if (es_fecha_valida(fecha)) {
-//         printf("La fecha proporcionada es mayor que la fecha actual.\n");
-//     } else {
-//         printf("La fecha proporcionada no es mayor que la fecha actual.\n");
-//     }
-    
-//     return 0;
-// }
-
 
 
