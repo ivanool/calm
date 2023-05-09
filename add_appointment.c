@@ -17,8 +17,6 @@ void addAppointment(struct AppointmentNode **head_ref, int account_number, int c
         (*head_ref)->prev = new_node;
     }
     (*head_ref) = new_node;
-
-    // Actualizar archivo CSV
     FILE *fp;
     fp = fopen(filename, "a");
     if (fp == NULL) {

@@ -6,5 +6,5 @@ struct patient* find_patient_by_account_number(struct patient* head, int account
         }
         current = current->next;
     }
-    return 0; // no se encontró el paciente con el número de cuenta especificado
+    return 0; 
 }

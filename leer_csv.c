@@ -45,23 +45,3 @@ struct patient* read_patient_info_from_csv(char* filename) {
     return head;
 }
 
-// int main() {
-//     struct patient* patients = read_patient_info_from_csv("pacientes.csv");
-//     if (patients == NULL){
-//         printf("Error reading patient info from CSV file\n");
-//         return 1;
-//     }
-
-//     struct patient* current_patient = patients;
-//     while (current_patient != NULL) {
-//         printf("Name: %s\n", current_patient->name);
-//         printf("Age: %d\n", current_patient->age);
-//         printf("Account number: %d\n", current_patient->account_number);
-//         printf("Sex: %s\n", current_patient->sex);
-//         printf("Birthdate: %s\n", current_patient->birthdate);
-//         printf("\n");
-//         current_patient = current_patient->next;
-//     }
-
-//     return 0;
-// }

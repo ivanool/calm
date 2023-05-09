@@ -9,9 +9,3 @@ int get_hour_slot(int hour) {
     }
 }
 
-
-// int main(){
-//     for(int i = 7; i<7+17; i++){
-//         printf("%d,%d \n", i, get_hour_slot(i));
-//     }
-// }
