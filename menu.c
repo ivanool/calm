@@ -128,6 +128,7 @@ while(1){
                 char date[11];
                 printf("Ingrese la fecha de la cita: \n");
                 scanf("%s", date);
+                printf("La fecha ingresada es: %s\n", date);
                 int valid_date = 0;
                 valid_date = es_fecha_valida(date);
 
@@ -141,7 +142,7 @@ while(1){
                     if (hour >= 7 && hour <= 22) {
                         printf("vuelva a ingresar la hora de la cita para confirmar: \n");
                         char hora_confirmacion[3];
-                        scanf("%d", &hora_confirmacion);
+                        scanf("%s", &hora_confirmacion);
                         int add_turno = hour - 6;
                         struct consultorio *temporal_consultorios = consultorios;
                         int consultorio_dd = ciclo_consultorio(temporal_consultorios, valid_hour);
@@ -153,10 +154,10 @@ while(1){
                    
 
                         if (disponible == 1) {
-                            printf("prueba.c\n");
-
+                            printf("%s", date);
+                            // printf("%d", hora_confirmacion);
+                            // printf("%d", add_turno);
                             addAppointment(&head, account_number_option1, consultorio_dd, acc->name, date, hora_confirmacion, add_turno, "citas.csv");
-
                             option =-1;
                             break;
                         }
