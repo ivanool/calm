@@ -130,6 +130,7 @@ int menu(){
     //0 para salir. Si el usuario ingresa una opción inválida, imprima un mensaje de error y vuelva a mostrar el menú.
 
 while(1){
+        
         printf("Bienvenido al sistema de citas del hospital\n");
         printf("1. Agregar cita\n");
         printf("2. Eliminar cita\n");
@@ -259,7 +260,7 @@ while(1){
                     hora_actual = get_hour_slot(hora_actual);
                     if(activador != 1){
                         printf("El consultorio %d está disponible para la hora %d\n", i, hora_actual);
-                        asignar_turno_previas(activador, hora_actual, hora_actual);
+                        asignar_turno_previas(activador, &consultorios, hora_actual);
                         option = -1;
                         break;
 
@@ -285,12 +286,16 @@ while(1){
             }
         }
         while(option == 4){
-            printList(head);
+            struct nodeN *temporal2 = citas;
+            printAppointments(temporal2);
             option = -1;
+            // free(temporal2);
             break;
         }
         while(option == 5){
             display(front);
+            option =-1;
+            break;
 
         }
         while(option == 0){

@@ -1,16 +1,14 @@
-void printList(struct AppointmentNode *head) {
+void printAppointments(struct NodeN* head) {
     if (head == NULL) {
-        printf("La lista esta vacia\n");
+        printf("La lista esta vacia.\n");
         return;
     }
-    struct AppointmentNode *current = head;
+    struct NodeN* current = head;
     while (current != NULL) {
-        printf("Nombre: %s\n", current->name);
-        printf("Fecha: %s\n", current->date);
-        printf("Hora: %s\n", current->time);
-        printf("Número de cuenta: %d\n", current->account_number);
-        printf("Consultorio: %d\n", current->consultory);
+        printf("Nombre: %s\n", current->nombre);
+        printf("Numero de cuenta: %d\n", current->numero_cuenta);
         printf("Turno: %d\n", current->turno);
+        printf("Consultorio: %d\n", current->consultorio);
         printf("\n");
         current = current->next;
     }
